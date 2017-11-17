@@ -1,0 +1,15 @@
+<h5><%= link_to "Return to Coffee Menu", coffees_path %></h5>
+<h1><%= @coffee.blend_name %></h1>
+<h4>Rated <%= @coffee.rating %> out of 5 cups</h4>
+<h3>Origin: <%= @coffee.origin %>, and Variety: <%= @coffee.variety %></h3>
+<hr>
+<p><%= @coffee.notes %></p>
+<h5 class="price">$<%= @coffee.cost %> per pound</h5>
+
+<p>
+  <%= link_to "Edit", edit_coffee_path(@coffee) %>
+  <%= link_to "Delete", delete_coffee_path(@coffee), data: {
+                      confirm: "This will remove the coffee blend completely from the sit. Are you confident in this action?",
+                      method: "delete"
+    } %>
+</p>
