@@ -43,6 +43,11 @@ _This site functions as the online sales portal for the coffee shop, Coraline's 
 * Users can log in using email and password.
 * Users can view all coffees made in the USA.
 
+## Future Intended Functionality
+
+<!-- * User can do the following from the landing page:
+  * Access the product page, the product detail pages and their reviews. -->
+
 ## Support and contact details
 
 _Please contact [ldmackrell@gmail.com](mailto: ldmackrell@gmail.com) with questions, comments, or issues._

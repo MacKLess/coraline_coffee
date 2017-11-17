@@ -1,0 +1,13 @@
+<h1>Coffee Menu</h1>
+
+<% if @coffees.any? %>
+  <ul>
+    <% @coffees.each do |coffee| %>
+      <li><%= link_to coffee.blend_name, coffee_path(coffee) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>There are no coffee products saved!</h3>
+<% end %>
+
+<p> <%= link_to "Add a Coffee", new_coffee_path %> </p>
