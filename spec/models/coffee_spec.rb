@@ -38,4 +38,29 @@ describe Coffee do
     end
   end
 
+  describe '#rating' do
+    it "returns average rating based on all reviews" do
+      coffeeA = Coffee.create(
+        blend_name: "Summer Solstice",
+        origin: "Antigua, Guatemala",
+        cost: 12.39,
+        variety: "Pacas",
+        notes: "balanced, silky, marzipan, orange-creamsicle, bergamot"
+      )
+      review1 = Review.create(
+        coffee_id: coffeeA.id,
+        content: "Rutabega",
+        user: "Dude1",
+        rating: 2
+      )
+      review12 = Review.create(
+        coffee_id: coffeeA.id,
+        content: "Green grocer",
+        user: "Dude2",
+        rating: 5
+      )
+      expect(coffeeA.rating).to eq(3.5)
+    end
+  end
+
 end
