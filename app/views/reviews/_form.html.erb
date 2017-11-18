@@ -1,7 +1,6 @@
-<%= render 'layouts/errors', object: @coffee  %>
+<%= render 'layouts/errors', object: @review  %>
 
 <% if @coffee %>
-
   <%= form_for [@coffee, @review] do |f| %>
     <div class="form-group">
       <%= f.label :rating, class: "control-label" %>
@@ -25,3 +24,4 @@
     </div>
     <%= f.submit class: "btn" %>
   <% end %>
+<% end %>

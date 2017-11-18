@@ -1,0 +1,17 @@
+<h1>Review of <%= @review.coffee.blend_name %></h1>
+
+<!-- <h3>By <%= @review.user %></h3> -->
+
+<p><%= @review.content %></p>
+
+<h5>Rating: <%= @review.rating %> of 5 Cups</h5>
+
+<hr>
+
+<p>
+  <%= link_to "Edit", edit_review_path(@review) | %>
+  <%= link_to "Delete", review_path(@review), data: {
+              confirm: "This will delete all information for this review. Positive this is what you want to do?",
+              method: "delete"
+    } %>
+</p>

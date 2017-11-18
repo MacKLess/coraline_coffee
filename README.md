@@ -45,8 +45,7 @@ _This site functions as the online sales portal for the coffee shop, Coraline's 
 
 ## Future Intended Functionality
 
-<!-- * User can do the following from the landing page:
-  * Access the product page, the product detail pages and their reviews. -->
+* I'd like to have the rating be represented by little cups of coffee (1 out of 5)
 
 ## Support and contact details
 
