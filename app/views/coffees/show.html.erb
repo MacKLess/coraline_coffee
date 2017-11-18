@@ -6,6 +6,8 @@
 <p><%= @coffee.notes %></p>
 <h5 class="price">$<%= @coffee.cost %> per pound</h5>
 
+<h4><%= link_to "Reviews of this Coffee Blend", coffee_reviews_path(@coffee) %></h4>
+
 <p>
   <%= link_to "Edit", edit_coffee_path(@coffee) %>
   <%= link_to "Delete", delete_coffee_path(@coffee), data: {

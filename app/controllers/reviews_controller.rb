@@ -1,6 +1,11 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = Review.all
+    if params[:coffee_id]
+      @coffee = Coffee.find(params[:coffee_id])
+      @reviews = @coffee.reviews
+    else
+      @reviews = Review.all
+    end
   end
 
   def show
