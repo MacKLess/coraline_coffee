@@ -7,7 +7,9 @@ describe Coffee do
   it { should validate_presence_of :variety }
   it { should validate_presence_of :notes }
 
-  # it { should have_many :reviews }
+  it { should have_many :reviews }
+
+  # ignore_interference_by_writer referenced when I did a google search for fix to validation errors I keep getting when I RSPEC.
 
   describe '.alphabetical' do
     it "returns coffee blends by blend name" do

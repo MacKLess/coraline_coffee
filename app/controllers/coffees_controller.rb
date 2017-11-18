@@ -1,6 +1,6 @@
 class CoffeesController < ApplicationController
   def index
-    @coffees = Coffee.all
+    @coffees = Coffee.alphabetical
   end
 
   def show
