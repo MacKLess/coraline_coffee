@@ -23,6 +23,7 @@ class ReviewsController < ApplicationController
     if @review.save
       flash[:notice] = "Review made!"
       redirect_to review_path(@review)
+      # Epicodus example used this version: redirect_to review_path(@review.episode)
     else
       render :new
     end
@@ -52,6 +53,7 @@ class ReviewsController < ApplicationController
 
 private
   def review_params
-    params.require(:review).permit(:coffee_id, :rating, :user, :content)
+    params.require(:review).permit(:coffee_id, :rating, :content)
+#     params.require(:review).permit(:coffee_id, :rating, :user, :content)
   end
 end

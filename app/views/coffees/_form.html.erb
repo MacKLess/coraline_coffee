@@ -1,4 +1,4 @@
-<%= render 'layouts/errors', object: @coffee  %>
+<%= render 'layouts/errors', object => @coffee  %>
 
 <%= form_for @coffee do |f| %>
   <div class="form-group">
@@ -11,7 +11,7 @@
   </div>
   <div class="form-group">
     <%= f.label :cost, class: "control-label" %>
-    <%= f.text_field :cost, class: "form-control" %>
+    <%= f.number_field :cost, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :variety, class: "control-label" %>

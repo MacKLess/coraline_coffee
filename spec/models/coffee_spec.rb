@@ -53,7 +53,7 @@ describe Coffee do
         user: "Dude1",
         rating: 2
       )
-      review12 = Review.create(
+      review2 = Review.create(
         coffee_id: coffeeA.id,
         content: "Green grocer",
         user: "Dude2",

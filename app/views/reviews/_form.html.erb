@@ -1,4 +1,4 @@
-<%= render 'layouts/errors', object: @review  %>
+<%= render 'layouts/errors', object: @review %>
 
 <% if @coffee %>
   <%= form_for [@coffee, @review] do |f| %>
@@ -8,7 +8,7 @@
     </div>
     <div class="form-group">
       <%= f.label :content, class: "control-label" %>
-      <%= f.text_field :content, class: "form-control" %>
+      <%= f.text_area :content, class: "form-control" %>
     </div>
     <%= f.submit class: "btn" %>
   <% end %>
@@ -20,7 +20,7 @@
     </div>
     <div class="form-group">
       <%= f.label :content, class: "control-label" %>
-      <%= f.text_field :content, class: "form-control" %>
+      <%= f.text_area :content, class: "form-control" %>
     </div>
     <%= f.submit class: "btn" %>
   <% end %>
