@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
   def index
-    if params[:coffee_id]
-      @coffee = Coffee.find(params[:coffee_id])
-      @reviews = @coffee.reviews
+    if params[:product_id]
+      @product = Product.find(params[:product_id])
+      @reviews = @product.reviews
     else
       @reviews = Review.all
     end
@@ -13,13 +13,13 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @coffee = Coffee.find(params[:coffee_id])
-    @review = @coffee.reviews.new
+    @product = Product.find(params[:product_id])
+    @review = @product.reviews.new
   end
 
   def create
-    @coffee = Coffee.find(params[:coffee_id])
-    @review = @coffee.reviews.new(review_params)
+    @product = Product.find(params[:product_id])
+    @review = @product.reviews.new(review_params)
     if @review.save
       flash[:notice] = "Review made!"
       redirect_to review_path(@review)
@@ -35,7 +35,7 @@ class ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:id])
-    @coffee = @review.coffee
+    @product = @review.product
     if @review.update(review_params)
       flash[:notice] = "Review updated!"
       redirect_to review_path(@review)
@@ -53,7 +53,7 @@ class ReviewsController < ApplicationController
 
 private
   def review_params
-    params.require(:review).permit(:coffee_id, :rating, :content)
-#     params.require(:review).permit(:coffee_id, :rating, :user, :content)
+    params.require(:review).permit(:product_id, :rating, :content)
+#     params.require(:review).permit(:product_id, :rating, :user, :content)
   end
 end

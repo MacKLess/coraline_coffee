@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "the add a coffee process" do
   it "adds a new coffee" do
-    visit coffees_path
+    visit products_path
     click_link "Add a Coffee"
     fill_in "Blend Name", :with => "Total Drek"
     fill_in "Origin", :with => "Antigua, Guatemala"
@@ -17,21 +17,21 @@ end
 
 describe "the edit a coffee process" do
   it "allows user to edit a coffee" do
-    coffee = Coffee.create(blend_name: "Test", origin: "Testland, WA", cost: 15.55, variety: "ditch water", notes: "not fit for consumption")
-    visit coffees_path
+    product = Product.create(blend_name: "Test", origin: "Testland, WA", cost: 15.55, variety: "ditch water", notes: "not fit for consumption")
+    visit products_path
     click_on "Test"
     fill_in "Origin", :with => "North Dakota, United States"
     click_button "Update Coffee"
-    expect(page).to have_content "North Dakota, United States"    
+    expect(page).to have_content "North Dakota, United States"
   end
 end
 
 describe "the delete a coffee process" do
   it "allows user to delete a coffee" do
-    coffee = Coffee.create(blend_name: "Test", origin: "Testland, WA", cost: 15.55, variety: "ditch water", notes: "not fit for consumption")
-    visit coffee_path(coffee)
+    product = Product.create(blend_name: "Test", origin: "Testland, WA", cost: 15.55, variety: "ditch water", notes: "not fit for consumption")
+    visit product_path(product)
     click_link "Delete"
-    visit coffees_path
+    visit products_path
     expect(page).to have_no_content("Test")
   end
 end

@@ -1,0 +1,15 @@
+<h1>Product Menu</h1>
+
+<% if @products.any? %>
+  <ul>
+    <% @products.each do |product| %>
+      <li>
+        <%= link_to product.blend_name, product_path(product) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>There are no coffee products saved!</h3>
+<% end %>
+
+<p><%= link_to "Add a Product", new_product_path %></p>

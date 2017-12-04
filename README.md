@@ -1,4 +1,4 @@
-# Coraline Coffee
+# Coraline Cafe
 
 ### _Epicodus Solo Project in Rails, November 17, 2017_
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-_This site functions as the online sales portal for the coffee shop, Coraline's Coffee. Users can review the coffee types available and leave reviews on their favorites._
+_This site functions as the online sales portal for the coffee shop, Coraline's Cafe. Users can review the coffee types available and leave reviews on their favorites._
 
 ## Set-up/Installation Instructions
 

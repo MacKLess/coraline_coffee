@@ -1,4 +1,4 @@
- class Coffee < ActiveRecord::Base
+ class Product < ActiveRecord::Base
    has_many :reviews
    validates :blend_name, :origin, :cost, :variety, :notes, presence: true
 

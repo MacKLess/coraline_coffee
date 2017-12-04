@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Coffee do
+describe Product do
   it { should validate_presence_of :blend_name }
   it { should validate_presence_of :origin }
   it { should validate_presence_of :cost }
@@ -13,28 +13,28 @@ describe Coffee do
 
   describe '.alphabetical' do
     it "returns coffee blends by blend name" do
-      coffeeA = Coffee.create(
+      productA = Product.create(
         blend_name: "Summer Solstice",
         origin: "Antigua, Guatemala",
         cost: 12.39,
         variety: "Pacas",
         notes: "balanced, silky, marzipan, orange-creamsicle, bergamot"
       )
-      coffeeB = Coffee.create(
+      productB = Product.create(
         blend_name: "Bog Standard",
         origin: "New Jersey, USA",
         cost: 5.39,
         variety: "Repulsive",
         notes: "balanced combination of watery and sharp, drink hot to avoid the taste"
       )
-      coffeeC = Coffee.create(
+      productC = Product.create(
         blend_name: "Seattle Standard",
         origin: "Washington, USA",
         cost: 15.39,
         variety: "Starbucks",
         notes: "cocoa, nutty, smooth, unremarkable, does the job"
       )
-      expect(Coffee.alphabetical).to eq([coffeeB, coffeeC, coffeeA])
+      expect(Product.alphabetical).to eq([productB, productC, productA])
     end
   end
 

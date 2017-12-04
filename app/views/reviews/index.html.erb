@@ -1,7 +1,7 @@
-<% if @coffee %>
-  <h1>Reviews of <%= @coffee.blend_name %></h1>
+<% if @product %>
+  <h1>Reviews of <%= @product.blend_name %></h1>
 
-  <p><%= link_to "Leave a Review", new_coffee_review_path(@coffee) %></p>
+  <p><%= link_to "Leave a Review", new_product_review_path(@product) %></p>
 <% else %>
   <h1>Reviews</h1>
 <% end %>
@@ -9,7 +9,7 @@
 <% if @reviews.any? %>
   <ul>
     <%= @reviews.each do |review| %>
-      <li><%= link_to "#{review.coffee.blend_name} by #{review.user}", review_path(review) %></li>
+      <li><%= link_to "#{review.product.blend_name} by #{review.user}", review_path(review) %></li>
     <% end %>
   </ul>
 <% else %>
