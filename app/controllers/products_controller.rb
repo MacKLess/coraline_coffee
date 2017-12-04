@@ -1,4 +1,4 @@
-class ProdcutsController < ApplicationController
+class ProductsController < ApplicationController
   def index
     @products = Product.alphabetical
   end
