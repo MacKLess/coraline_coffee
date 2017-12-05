@@ -1,6 +1,6 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
   def create
-    @user = User.authenticate(params[:email]), params[:password]
+    @user = User.authenticate(params[:email], params[:password])
     if @user
       flash[:notice] = "Welcome! Pour yourself a cuppa Joe!"
       session[:user_id] = @user.id
@@ -15,5 +15,5 @@ class SessionController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "Thank you for visiting Coraline's Cafe. Please visit us again!"
     redirect_to '/'
-  end 
+  end
 end

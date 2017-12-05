@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new
+    # @user = User.new
+    @user =  nil
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Welcome to Coraline's Cafe"
+      flash[:notice] = "Welcome to Coraline's Cafe! Come on in and have a cuppa."
       session[:user_id] = @user.id
       redirect_to '/'
     else
